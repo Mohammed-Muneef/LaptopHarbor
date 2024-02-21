@@ -1,8 +1,11 @@
 
 .products{
     padding: auto;
+    background-color: #e3f2fd;
 }
 .card{
     margin: 19px;
     display: inline-block;
 }
+
+/* #e3f2fd */
