@@ -1,54 +1,64 @@
 {
     "products": [
         {
+            "id":"1",
             "image":"../images/lap1.jpeg",
             "title":"Macbook air",
             "desc":"RAM: 8GB ROM:256GB Processor:M1"
         },
 
         {
+            "id":"2",
             "image":"../images/lap2.jpeg",
             "title":"Victus",
             "desc":"RAM: 8GB ROM:256GB Processor:M1"
         },
             
         {
+            "id":"3",
             "image":"../images/lap3.jpeg",
             "title":"Dell 1250cc",
             "desc":"RAM: 8GB ROM:256GB Processor:M1"
         },
 
         {
+            "id":"4",
             "image":"../images/lap4.jpeg",
             "title":"HP Notebook 4",
             "desc":"RAM: 8GB ROM:256GB Processor:M1"
         },
         {
+            "id":"5",
             "image":"../images/lap5.jpeg",
             "title":"HP zx6r",
             "desc":"RAM: 8GB ROM:256GB Processor:M1"
         },
         {
+            "id":"6",
             "image":"../images/lap6.jpeg",
             "title":"MI Notebook Pro",
             "desc":"RAM: 8GB ROM:256GB Processor:M1"
         },
         {
+            "id":"7",
             "image":"../images/lap7.jpeg",
             "title":"HP Notebook 11",
             "desc":"RAM: 8GB ROM:256GB Processor:M1"
         },
         {
+            "id":"8",
             "image":"../images/lap8.jpeg",
             "title":"Dell 650cc",
             "desc":"RAM: 8GB ROM:256GB Processor:M1"
         },
         {
+            "id":"9",
             "image":"../images/lap9.jpeg",
             "title":"HP 900",
             "desc":"RAM: 8GB ROM:256GB Processor:M1"
         },
         {
+            "id":"10",
             "image":"../images/lap10.jpeg",
             "title":"HP zx10r",
             "desc":"RAM: 8GB ROM:256GB Processor:M1"
