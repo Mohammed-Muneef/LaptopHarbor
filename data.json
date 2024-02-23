@@ -16,7 +16,7 @@
             
         {
             "id":"3",
-            "image":"images/lap3.jpeg",
+            "image":"images/lap12.jpeg",
             "title":"Dell 1250cc",
             "desc":"RAM: 8GB ROM:256GB Processor:M1"
         },
@@ -35,31 +35,31 @@
         },
         {
             "id":"6",
-            "image":"images/lap6.jpeg",
+            "image":"images/lap13.jpeg",
             "title":"MI Notebook Pro",
             "desc":"RAM: 8GB ROM:256GB Processor:M1"
         },
         {
             "id":"7",
-            "image":"images/lap7.jpeg",
+            "image":"images/lap14.jpeg",
             "title":"HP Notebook 11",
             "desc":"RAM: 8GB ROM:256GB Processor:M1"
         },
         {
             "id":"8",
-            "image":"images/lap8.jpeg",
+            "image":"images/lap15.jpeg",
             "title":"Dell 650cc",
             "desc":"RAM: 8GB ROM:256GB Processor:M1"
         },
         {
             "id":"9",
-            "image":"images/lap9.jpeg",
+            "image":"images/lap16.jpeg",
             "title":"HP 900",
             "desc":"RAM: 8GB ROM:256GB Processor:M1"
         },
         {
             "id":"10",
-            "image":"images/lap10.jpeg",
+            "image":"images/lap17.jpeg",
             "title":"HP zx10r",
             "desc":"RAM: 8GB ROM:256GB Processor:M1"
         }
