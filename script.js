@@ -34,7 +34,8 @@ function render(product) {
   <img class="card-img-top" src="${product.image}" alt="Card image cap" style="height:238px;">
   <div class="card-body">
     <h5 class="card-title"><b>${product.title}</b></h5>
-    <p class="card-text">${product.desc}</p>
+    <p class="card-text">&#x20b9; ${product.price}</p>
+    <p class="card-text">Rating: ${product.rating}<span class="fa fa-star checked"></span></p>
     <a href="#" class="btn btn-primary" onclick="addToCart('${product}')">Add to cart</a>
   </div>`;
 }
