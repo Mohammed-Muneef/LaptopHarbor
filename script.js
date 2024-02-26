@@ -8,6 +8,14 @@
 //       }
 //     });
 // }
+
+
+
+// function addToCart(pro){
+//   console.log(pro)
+// }
+
+
 async function fetchProducts() {
   try {
     const response = await fetch("./data.json");
@@ -27,6 +35,10 @@ fetchProducts().then((products) => {
   }
 });
 
+
+
+
+
 function render(product) {
   const card = document.querySelector(".products");
   card.innerHTML += `
@@ -36,7 +48,7 @@ function render(product) {
     <h5 class="card-title"><b>${product.title}</b></h5>
     <p class="card-text">&#x20b9; ${product.price}</p>
     <p class="card-text">Rating: ${product.rating}<span class="fa fa-star checked"></span></p>
-    <a href="#" class="btn btn-primary" onclick="addToCart('${product}')">Add to cart</a>
+    <a href="#" class="btn btn-primary" onclick="addToCart('${product.title}','${product.price}','${product.image}')">Add to cart</a>
   </div>`;
 }
 
@@ -110,7 +122,5 @@ function searchData(data, searchTerm) {
     item.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 }
-
-
 
 
