@@ -17,43 +17,25 @@ function addToCart(ptitle,pprice,pimage){
 
   for(let i=0;i<cart.length;i++)
   {
-    var cartitems = document.getElementById("products")
-    cartitems.innerHTML+=`<div class="card rounded-3 mb-4">
-    <div class="card-body p-4">
-      <div class="row d-flex justify-content-between align-items-center">
-        <div class="col-md-2 col-lg-2 col-xl-2">
-          <img
-            src="${cart[i].image}"
-            class="img-fluid rounded-3" alt="Cotton T-shirt">
-        </div>
-        <div class="col-md-3 col-lg-3 col-xl-3">
-          <p class="lead fw-normal mb-2">${cart[i].title}</p>
-          
-        </div>
-        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-          <button class="btn btn-link px-2"
-            onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-            <i class="fas fa-minus"></i>
-          </button>
-
-          <input style="width:50px" id="form1" min="0" name="quantity" value="2" type="number"
-            class="form-control form-control-sm" />
-
-          <button class="btn btn-link px-2"
-            onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-            <i class="fas fa-plus"></i>
-          </button>
-        </div>
-        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-          <h5 class="mb-0">${cart[i].price}</h5>
-        </div>
-        <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-          <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+    var cartitems = document.getElementsByTagName('tbody')[0]
+    //console.log(cartitems)
+    cartitems.innerHTML+=`<tr>
+    <td class="p-4">
+      <div class="media align-items-center">
+        <img src="${cart[i].image}" class="d-block ui-w-40 ui-bordered mr-4" alt="">
+        <div class="media-body">
+          <a href="#" class="d-block text-dark">${cart[i].title}</a>
+         
         </div>
       </div>
-    </div>
-    
-  </div>`;
+    </td>
+    <td class="text-right font-weight-semibold align-middle p-4">${cart[i].price}</td>
+    <td class="align-middle p-4"><input type="text" class="form-control text-center" value="1"></td>
+    <td class="text-right font-weight-semibold align-middle p-4">${cart[i].price}</td>
+    <td class="text-center align-middle px-0"><a href="#" class="shop-tooltip close float-none text-danger" title="" data-original-title="Remove">×</a></td>
+  </tr>
+
+          `;
 
    
     
