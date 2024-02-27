@@ -4,7 +4,7 @@
             "id":"1",
             "image":"images/lap1.jpeg",
             "title":"Macbook air",
-            "price":"65,000 ",
+            "price":"65000",
             "rating":"4"
         },
 
@@ -12,7 +12,7 @@
             "id":"2",
             "image":"images/lap2.jpeg",
             "title":"Victus",
-            "price":"80,000 ",
+            "price":"80000",
             "rating":"4.5"
         },
             
@@ -20,7 +20,7 @@
             "id":"3",
             "image":"images/lap12.jpeg",
             "title":"Dell 1250cc",
-            "price":"75,000 ",
+            "price":"75000",
             "rating":"3.5"
         },
 
@@ -28,49 +28,49 @@
             "id":"4",
             "image":"images/lap4.jpeg",
             "title":"HP Notebook 4",
-            "price":"64,000 ",
+            "price":"64000",
             "rating":"4"
         },
         {
             "id":"5",
             "image":"images/lap5.jpeg",
             "title":"HP zx6r",
-            "price":"55,000 ",
+            "price":"55000",
             "rating":"4.5"
         },
         {
             "id":"6",
             "image":"images/lap13.jpeg",
             "title":"MI Notebook Pro",
-            "price":"45,000 ",
+            "price":"45000",
             "rating":"4.6"
         },
         {
             "id":"7",
             "image":"images/lap14.jpeg",
             "title":"HP Notebook 11",
-            "price":"66,000 ",
+            "price":"66000",
             "rating":"5"
         },
         {
             "id":"8",
             "image":"images/lap15.jpeg",
             "title":"Dell 650cc",
-            "price":"45,000 ",
+            "price":"45000",
             "rating":"5"
         },
         {
             "id":"9",
             "image":"images/lap16.jpeg",
             "title":"HP 900",
-            "price":"35,000 ",
+            "price":"35000",
             "rating":"4.5"
         },
         {
             "id":"10",
             "image":"images/lap17.jpeg",
             "title":"HP zx10r",
-            "price":"55,000 ",
+            "price":"55000",
             "rating":"4"
         }
     ]
