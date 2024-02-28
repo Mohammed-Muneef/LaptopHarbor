@@ -8,7 +8,8 @@ body{
 }
 
 .card{
-    box-shadow: 0 1px 15px 1px rgba(52,40,104,.08);    
+    box-shadow: 0 1px 15px 1px rgba(52,40,104,.08);  
+    
 }
 
 .ui-product-color {
@@ -23,3 +24,19 @@ body{
     vertical-align: middle;
 }
 
+.con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

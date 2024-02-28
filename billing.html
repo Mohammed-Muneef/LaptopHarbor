@@ -9,6 +9,7 @@
    
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
 </head>
 <body style="background-color: #e3f2fd">
     <div class="container">
@@ -135,18 +136,18 @@
                     </div>
                     <hr class="mb-4">
                     <h4 class="mb-3">Payment</h4>
-                    <div class="d-block my-3">
+                    <!-- <div class="d-block my-3">
                         <div class="custom-control custom-radio">
-                            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
-                            <label class="custom-control-label" for="credit">Credit card</label>
+                            <input id="card" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="" onchange="handlePaymentChange()">
+                            <label class="custom-control-label" for="credit">Card</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
-                            <label class="custom-control-label" for="debit">Debit card</label>
+                            <input id="upi" name="paymentMethod" type="radio" class="custom-control-input" required="" onchange="handlePaymentChange()">
+                            <label class="custom-control-label" for="debit">UPI</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required="">
-                            <label class="custom-control-label" for="paypal">PayPal</label>
+                            <input id="cod" name="paymentMethod" type="radio" class="custom-control-input" required="" onchange="handlePaymentChange()">
+                            <label class="custom-control-label" for="paypal">Cash On Delivery</label>
                         </div>
                     </div>
                     <div class="row">
@@ -173,7 +174,69 @@
                             <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
                             <div class="invalid-feedback"> Security code required </div>
                         </div>
-                    </div>
+                    </div> -->
+
+                    
+    <form onchange="handlePaymentChange()">
+        <p>Select your preferred payment method:</p>
+        <div>
+            <input type="radio" id="upi" name="payment" value="upi" onchange="handlePaymentChange()">
+            <label for="upi">UPI</label>
+        </div>
+        <div>
+            <input type="radio" id="card" name="payment" value="card" onchange="handlePaymentChange()">
+            <label for="card">Card</label>
+        </div>
+        <div>
+            <input type="radio" id="cod" name="payment" value="cod" onchange="handlePaymentChange()">
+            <label for="cod">Cash on Delivery</label>
+        </div>
+        <br>
+        <div id="upi-container" style="display: none;">
+            <!-- <label for="upiNumber">Enter UPI Number:</label>
+            <input type="text" id="upiNumber" name="upiNumber" placeholder="Ex: @username.bankname"> -->
+            <div class="col-md-6 mb-3">
+                <label for="cc-name">Enter UPI Id:</label>
+                <input type="text" class="form-control" id="cc-name" placeholder="Ex: @username.bankname" required="">
+                <div class="invalid-feedback"> UPI Number is required</div>
+            </div>
+        </div>
+        <br>
+
+        <div id="cardDetails" style="display: none;">
+            <h3>Card Details</h3>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="cc-name">Name on card</label>
+                    <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                    <small class="text-muted">Full name as displayed on card</small>
+                    <div class="invalid-feedback"> Name on card is required </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="cc-number">Credit card number</label>
+                    <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                    <div class="invalid-feedback"> Credit card number is required </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <label for="cc-expiration">Expiration</label>
+                    <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                    <div class="invalid-feedback"> Expiration date required </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="cc-cvv">CVV</label>
+                    <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                    <div class="invalid-feedback"> Security code required </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        
+    </form>
+
+    <div id="totalprice">Total Price :</div>
+
                     <hr class="mb-4">
                     <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to payment</button>
                 </form>
@@ -183,5 +246,32 @@
             <p class="mb-1">© 2020 Copyright: LaptopHarbor.com</p>
         </footer>
     </div>
+
+    <script>
+        
+        function handlePaymentChange() {
+            const cardDetails = document.getElementById("cardDetails");
+            const upiInput = document.getElementById("upi-container");
+            
+            if (document.getElementById("card").checked) {
+                cardDetails.style.display = "block";
+                upiInput.style.display = "none";
+            } else if (document.getElementById("upi").checked) {
+                cardDetails.style.display = "none";
+                upiInput.style.display = "block";
+            } else {
+                cardDetails.style.display = "none";
+                upiInput.style.display = "none";
+            }
+        }
+
+        
+        var p1 = sessionStorage.getItem("totalPrice")
+        var d = document.getElementById('totalprice')
+        d.innerHTML+=`<span>${p1}</span>`;
+        
+  
+    </script>
+    
 </body>
 </html>
