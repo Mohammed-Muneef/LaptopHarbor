@@ -44,7 +44,7 @@ function render(product) {
   card.innerHTML += `
   <div class="card" style="width: 15rem;">
   <img class="card-img-top" src="${product.image}" alt="Card image cap" style="height:238px;">
-  <div class="card-body">
+  <div class="card-body" >
     <h5 class="card-title"><b>${product.title}</b></h5>
     <p class="card-text">&#x20b9; ${product.price}</p>
     <p class="card-text">Rating: ${product.rating}<span class="fa fa-star checked"></span></p>
