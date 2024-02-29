@@ -39,7 +39,7 @@ for (let i = 0; i < cart.length; i++) {
     onclick="this.parentNode.querySelector('input[type=number]').stepDown();updateTotal(${i})">
     <i class="fas fa-minus"></i>
     </button>
-    <input id="quantity${i}" type="Number" class="form-control text-center" value="1" onchange="updateTotal(${i})" style="width:70px">
+    <input id="quantity${i}" type="Number" class="form-control text-center" value="1" onchange="updateTotal(${i})" style="width:70px" min="1">
     <button class="btn btn-link px-2"
     onclick="this.parentNode.querySelector('input[type=number]').stepUp();updateTotal(${i})">
     <i class="fas fa-plus"></i>
