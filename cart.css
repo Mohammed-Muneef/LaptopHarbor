@@ -24,7 +24,7 @@ body{
     vertical-align: middle;
 }
 
-.con{
+.containerForTable{
     display: flex;
     justify-content: center;
     align-items: center;

@@ -13,7 +13,7 @@
             "image":"images/lap2.jpeg",
             "title":"Victus",
             "price":"80000",
-            "rating":"4.5"
+            "rating":"5"
         },
             
         {
@@ -21,7 +21,7 @@
             "image":"images/lap12.jpeg",
             "title":"Dell 1250cc",
             "price":"75000",
-            "rating":"3.5"
+            "rating":"3"
         },
 
         {
@@ -36,14 +36,14 @@
             "image":"images/lap5.jpeg",
             "title":"HP zx6r",
             "price":"55000",
-            "rating":"4.5"
+            "rating":"5"
         },
         {
             "id":"6",
             "image":"images/lap13.jpeg",
             "title":"MI Notebook Pro",
             "price":"45000",
-            "rating":"4.6"
+            "rating":"4"
         },
         {
             "id":"7",
@@ -64,7 +64,7 @@
             "image":"images/lap16.jpeg",
             "title":"HP 900",
             "price":"35000",
-            "rating":"4.5"
+            "rating":"5"
         },
         {
             "id":"10",

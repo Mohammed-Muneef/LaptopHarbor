@@ -46,7 +46,7 @@ for (let i = 0; i < cart.length; i++) {
     </button>
     </td>
     <td class="text-right font-weight-semibold align-middle p-4"><span id="total${i}">${cart[i].price}</span> </td>
-    <td class="text-center align-middle px-0"><button class="shop-tooltip close float-none text-danger" title="" data-original-title="Remove" onclick="deleteItem('${cart[i].title}');">×</button></td>
+    <td class="text-center align-middle px-4"><button class="shop-tooltip close float-none text-danger" title="" data-original-title="Remove" onclick="deleteItem('${cart[i].title}');">×</button></td>
   </tr>
 
      
