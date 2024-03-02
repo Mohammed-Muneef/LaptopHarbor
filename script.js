@@ -163,7 +163,7 @@ function searchData1(data, searchTerm) {
   // Example:
   // console.log(data,searchTerm)
   return data.filter((item) =>
-  item.rating.includes(searchTerm)
+  Number(item.rating)>=Number(searchTerm)
   );
 }
 
