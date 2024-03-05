@@ -1,19 +1,3 @@
-// function fetchProducts() {
-//   fetch("./data.json")
-//     .then((response) => response.json())
-//     .then((json) => {
-//       const products = json.products;
-//       for (const product of products) {
-//         render(product);
-//       }
-//     });
-// }
-
-
-
-// function addToCart(pro){
-//   console.log(pro)
-// }
 
 
 async function fetchProducts() {
@@ -53,33 +37,8 @@ function render(product) {
   </div>`;
 }
 
-// const searchButton = document.querySelector('#search');
-// searchButton.addEventListener('click', handleSearch);
 
-// function handleSearch()
-// {
-//     const searchedInput = document.querySelector('#inputbar')
-//     console.log(searchedInput)
-// }
 
-// function handleSearch() {
-//   const searchTerm = document.querySelector('#inputbar').value;
-
-//   // Send search term to server-side endpoint
-//   fetch('./data.json', {
-//       method: 'POST',
-//       body: JSON.stringify({ searchTerm })
-//   })
-//   .then(response => response.json())
-//   .then(searchResults => {
-//       // Update the page with search results
-//       render(searchResults);
-//   })
-//   .catch(error => {
-//       // Handle errors gracefully
-//       console.error('Search failed:', error);
-//   });
-// }
 
 function sorting(rate){
   const card = document.querySelector(".products");
@@ -127,28 +86,10 @@ function handleSearch() {
 
     // }
   });
-  // Fetch data from local JSON file
-  // fetch("./data.json")
-  //   .then((response) => response.json())
-  //   .then((data) => {
-  //     // Perform search within the fetched data
-  //     const searchResults = searchData(data, searchTerm);
-
-  //     // Update the page with search results
-  //     render(searchResults);
-  //   })
-  //   .catch((error) => {
-  //     console.error("Error fetching data:", error);
-  //   });
+ 
 }
 
-// Function to search within the data
-// function searchData(data, searchTerm) {
- 
-//   return data.filter((item) =>
-//   item.title.toLowerCase().includes(searchTerm.toLowerCase())
-//   );
-// }
+
 
 function searchData(data, searchTerm) {
   const searchResults = data.filter((item) =>
@@ -159,8 +100,7 @@ function searchData(data, searchTerm) {
 }
 
 function searchData1(data, searchTerm) {
-  // Implement your search logic here
-  // Example:
+
   // console.log(data,searchTerm)
   return data.filter((item) =>
   Number(item.rating)>=Number(searchTerm)
@@ -172,12 +112,7 @@ var count=cart.length;
 var cartsup=document.getElementById('cart-count')
 cartsup.innerHTML=`${count}`
 
-// function clear(){
-//   const searchvalue = document.getElementById("inputbar").value;
-//   if(searchvalue===''){
-//     window.location.reload()
-//   }
-// }
+
 
 const searchBar = document.getElementById("inputbar");
 

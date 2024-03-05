@@ -69,12 +69,7 @@ function totalprice() {
     const price1 = Number(cart[i].price);
     globalTotalPrice += price1 * quantity1;
   }
-  // for (const item of cart) {
-  //   console.log(item.price*item.quantity)
-  // globalTotalPrice += Number(item.price) * Number(item.quantity); // Use existing quantity from cart
-  // }
 
-  // Update global total price element (assuming you have an element with ID 'global-total-price'):
   const globalTotalPriceElement = document.getElementById("totalPrice");
   if (globalTotalPriceElement) {
     globalTotalPriceElement.textContent = `${globalTotalPrice.toFixed(2)}`;
@@ -102,20 +97,4 @@ function checkout() {
   sessionStorage.setItem("totalPrice", p);
 }
 
-//   function showProductGallery(product) {
-// 	//Iterate javascript shopping cart array
-// 	var productHTML = "";
-// 	product.forEach(function(item) {
-// 		productHTML += '<div class="product-item">'+
-// 					'<div class="productname">' + item.title + '</div>'+
-// 					'<div class="price">$<span>' + item.price + '</span></div>'+
-// 					'<div class="cart-action">'+
-// 						'<input type="text" class="product-quantity" name="quantity" value="1" size="2" />'+
-// 						'<input type="submit" value="Add to Cart" class="add-to-cart" onClick="addToCart(this)" />'+
-// 					'</div>'+
-// 				'</div>';
-// 				"<tr>";
 
-// 	});
-
-// }
