@@ -5,8 +5,9 @@ async function fetchProducts() {
     const response = await fetch("./data.json");
     const jsonData = await response.json();
     const products = jsonData.products;
-
+    // console.log(products);
     return products; // Return the array of products
+    
   } catch (error) {
     console.error("Error fetching products:", error);
     // Handle errors gracefully, e.g., return an empty array or throw a custom error
@@ -33,7 +34,7 @@ function render(product) {
     <p class="card-text"><strong>Price:</strong> &#x20b9; ${product.price}</p>
     <p class="card-text"><strong>Rating:</strong> ${product.rating}<span class="fa fa-star checked"></span></p>
     <p>Portable computer that can</p><p> be easily carried around</p>
-    <a href="#" class="btn btn-primary" style="margin-left: 44px;margin-top:10px;"onclick="addToCart('${product.title}','${product.price}','${product.image}');window.location.reload();">Add to cart</a>
+    <a href="#" class="btn btn-primary" style="margin-left: 44px;margin-top:10px;"onclick="addToCart('${product.title}','${product.price}','${product.image}','${product.rating}');window.location.reload();">Add to cart</a>
   </div>`;
 }
 
@@ -44,7 +45,7 @@ function sorting(rate){
   const card = document.querySelector(".products");
   card.innerHTML = ``;
   const searchTerm = rate;
-  console.log(searchTerm);
+  // console.log(searchTerm);
 
   fetchProducts().then((products) => {
     // for (const product of products) {

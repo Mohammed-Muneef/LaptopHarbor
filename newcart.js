@@ -1,9 +1,12 @@
-function addToCart(ptitle, pprice, pimage) {
+function addToCart(ptitle, pprice, pimage, prating) {
+  
     var prod = {
       title: ptitle,
       price: pprice,
       image: pimage,
+      rating: prating,
     };
+    
   
     var cart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
   
@@ -22,13 +25,13 @@ function addToCart(ptitle, pprice, pimage) {
   
  for (let i = 0; i < cart.length; i++) {
     var cartitems = document.getElementById('items');
-    console.log(cartitems)
+   
     cartitems.innerHTML += `<div class="cart-item d-md-flex justify-content-between" style="border-radius: 8px;">
     <div class="px-3 my-3">
         <a class="cart-item-product" href="#">
             <div class="cart-item-product-thumb"><img src="${cart[i].image}" alt="Product"></div>
             <div class="cart-item-product-info">
-                <h4 class="cart-item-product-title">${cart[i].title}</h4><span><strong>Price:</strong> ${cart[i].price}</span><span><strong>Rating:</strong> 4</span>
+                <h4 class="cart-item-product-title">${cart[i].title}</h4><span><strong>Price:</strong> ${cart[i].price}</span><span><strong>Rating: </strong>${cart[i].rating}<span class="fa fa-star checked"></span></span>
             </div>
         </a>
     </div>
