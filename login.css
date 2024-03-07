@@ -4,6 +4,15 @@
   font-family: Playfair;
 }
 
-.row {
-  padding-top: 15px;
+#form2Example1,
+#form2Example2 {
+  border: 1px solid black;
+}
+
+.form-outline .form-control ~ .form-label {
+  transform-origin: 0 -50px;
+}
+
+.my-2 {
+  margin-bottom: 0rem !important;
 }

@@ -1,32 +1,29 @@
 function addToCart(ptitle, pprice, pimage, prating) {
-  
-    var prod = {
-      title: ptitle,
-      price: pprice,
-      image: pimage,
-      rating: prating,
-    };
-    
-  
-    var cart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
-  
-    const existingItemIndex = cart.findIndex(item => item.title === prod.title);
-    if (existingItemIndex !== -1) {
-      alert("Item already in cart")
-    }
-    else{
+  var prod = {
+    title: ptitle,
+    price: pprice,
+    image: pimage,
+    rating: prating,
+  };
+
+  var cart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
+
+  const existingItemIndex = cart.findIndex((item) => item.title === prod.title);
+  if (existingItemIndex !== -1) {
+    alert("Item already in cart");
+  } else {
     cart.push(prod);
     localStorage.setItem("shoppingCart", JSON.stringify(cart));
     alert("Item added");
   }
-  }
-  
-  var cart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
-  
- for (let i = 0; i < cart.length; i++) {
-    var cartitems = document.getElementById('items');
-   
-    cartitems.innerHTML += `<div class="cart-item d-md-flex justify-content-between" style="border-radius: 8px;">
+}
+
+var cart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
+
+for (let i = 0; i < cart.length; i++) {
+  var cartitems = document.getElementById("items");
+
+  cartitems.innerHTML += `<div class="cart-item d-md-flex justify-content-between" style="border-radius: 8px;">
     <div class="px-3 my-3">
         <a class="cart-item-product" href="#">
             <div class="cart-item-product-thumb"><img src="${cart[i].image}" alt="Product"></div>
@@ -59,51 +56,47 @@ function addToCart(ptitle, pprice, pimage, prating) {
 </div>
       
       `;
+}
+
+function deleteItem(itemtitle) {
+  const filteredItems = cart.filter((item) => item.title !== itemtitle);
+  localStorage.setItem("shoppingCart", JSON.stringify(filteredItems));
+  location.reload();
+}
+
+function totalprice() {
+  let globalTotalPrice = 0;
+
+  for (let i = 0; i < cart.length; i++) {
+    const quantity1 = Number(document.getElementById(`quantity${i}`).value);
+    const price1 = Number(cart[i].price);
+    globalTotalPrice += price1 * quantity1;
   }
-  
-  
-  function deleteItem(itemtitle){
-    const filteredItems = cart.filter(item => item.title !== itemtitle);
-    localStorage.setItem('shoppingCart', JSON.stringify(filteredItems));
-    location.reload();
+
+  const globalTotalPriceElement = document.getElementById("totalPrice");
+  if (globalTotalPriceElement) {
+    globalTotalPriceElement.textContent = `${globalTotalPrice.toFixed(2)}`;
+  } else {
+    console.warn("Global total price element not found (ID: 'totalPrice').");
   }
-  
-  
-  function totalprice() {
-    let globalTotalPrice = 0;
-  
-    for (let i = 0; i < cart.length; i++) {
-      const quantity1 = Number(document.getElementById(`quantity${i}`).value);
-      const price1 = Number(cart[i].price);
-      globalTotalPrice += price1 * quantity1;
-    }
-  
-    const globalTotalPriceElement = document.getElementById("totalPrice");
-    if (globalTotalPriceElement) {
-      globalTotalPriceElement.textContent = `${globalTotalPrice.toFixed(2)}`;
-    } else {
-      console.warn("Global total price element not found (ID: 'totalPrice').");
-    }
+}
+totalprice();
+function updateTotal(index) {
+  const quantity = Number(document.getElementById(`quantity${index}`).value);
+  const price = Number(cart[index].price);
+  const totalElement = document.getElementById(`total${index}`);
+
+  if (!isNaN(quantity) && quantity >= 0) {
+    totalElement.textContent = (quantity * price).toFixed(2); // Display with 2 decimal places
+  } else {
+    totalElement.textContent = "Invalid Quantity"; // Display error message for invalid input
   }
+
   totalprice();
-  function updateTotal(index) {
-    const quantity = Number(document.getElementById(`quantity${index}`).value);
-    const price = Number(cart[index].price);
-    const totalElement = document.getElementById(`total${index}`);
-  
-    if (!isNaN(quantity) && quantity >= 0) {
-      totalElement.textContent = (quantity * price).toFixed(2); // Display with 2 decimal places
-    } else {
-      totalElement.textContent = "Invalid Quantity"; // Display error message for invalid input
-    }
-  
-    totalprice();
-  }
-  
-  function checkout() {
-    var p = document.getElementById("totalPrice").textContent;
-    console.log(p)
-    sessionStorage.setItem("totalPrice", p);
-  }
-  
- 
+}
+
+function checkout() {
+  var p = document.getElementById("totalPrice").textContent;
+  console.log(p);
+  sessionStorage.setItem("totalPrice", p);
+}
