@@ -5,17 +5,28 @@ function addToCart(ptitle, pprice, pimage, prating) {
     image: pimage,
     rating: prating,
   };
-
-  var cart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
-
-  const existingItemIndex = cart.findIndex((item) => item.title === prod.title);
-  if (existingItemIndex !== -1) {
-    alert("Item already in cart");
+  if (IsLoggedIn()) {
+    console.log("Adding item ");
+    var cart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
+    const existingItemIndex = cart.findIndex(
+      (item) => item.title === prod.title
+    );
+    if (existingItemIndex !== -1) {
+      alert("Item already in cart");
+    } else {
+      cart.push(prod);
+      localStorage.setItem("shoppingCart", JSON.stringify(cart));
+      alert("Item added");
+      window.location.reload();
+    }
   } else {
-    cart.push(prod);
-    localStorage.setItem("shoppingCart", JSON.stringify(cart));
-    alert("Item added");
+    console.log("User is not logged in, redirecting to login page.");
+    window.location.href = "login.html";
   }
+}
+
+function IsLoggedIn(){
+  return sessionStorage.getItem("loggedIn")==="true";
 }
 
 var cart = JSON.parse(localStorage.getItem("shoppingCart")) || [];

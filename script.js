@@ -27,7 +27,7 @@ function render(product) {
     <p class="card-text"><strong>Price:</strong> &#x20b9; ${product.price}</p>
     <p class="card-text"><strong>Rating:</strong> ${product.rating}<span class="fa fa-star checked"></span></p>
     <p>Portable computer that can</p><p> be easily carried around</p>
-    <a href="#" class="btn btn-primary" style="margin-left: 44px;margin-top:10px;"onclick="addToCart('${product.title}','${product.price}','${product.image}','${product.rating}');window.location.reload();">Add to cart</a>
+    <a href="#" class="btn btn-primary" style="margin-left: 44px;margin-top:10px;"onclick="addToCart('${product.title}','${product.price}','${product.image}','${product.rating}');">Add to cart</a>
   </div>`;
 }
 
